@@ -19,7 +19,7 @@ class CalculateIMC {
                 "Obesidade (Grau 1) \nIMC: ${decimalFormat.format(result)}"
             else if( result <= 39.9)
                 "Obsesidade Severa (Grau 2) \nIMC: ${decimalFormat.format(result)}"
-            else "Obesidade Mórbida (Grau 3) \nIMC: ${decimalFormat.format(result)}t"
+            else "Obesidade Mórbida (Grau 3) \nIMC: ${decimalFormat.format(result)}"
         }catch (ex: Exception){
             return "Falha ao tentar calcular, verifique se todos os campos foram preenchidos corretamente"
         }
