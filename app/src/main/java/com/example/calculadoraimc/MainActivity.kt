@@ -94,6 +94,13 @@ fun CalculatorImcScreen() {
 
             Image(painter = painterResource(id = R.drawable.imc), contentDescription = null, modifier = Modifier.size(100.dp))
 
+            Text(
+                text = textResult,
+                fontSize = 18.sp,
+                color = DARK_BLUE,
+                fontWeight = FontWeight.Bold
+            )
+
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
@@ -166,12 +173,6 @@ fun CalculatorImcScreen() {
                 )
             }
 
-            Text(
-                text = textResult,
-                fontSize = 18.sp,
-                color = DARK_BLUE,
-                fontWeight = FontWeight.Bold
-            )
         }
     }
 }
