@@ -167,7 +167,7 @@ fun CalculatorImcScreen() {
                 )
             ) {
                 Text(
-                    text = stringResource(id = R.string.calculator),
+                    text = "Calcular IMC",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
