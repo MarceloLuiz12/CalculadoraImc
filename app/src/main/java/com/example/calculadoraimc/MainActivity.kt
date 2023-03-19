@@ -7,6 +7,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun CalculatorImcScreen() {
@@ -72,6 +75,7 @@ fun CalculatorImcScreen() {
         }
     ) {
         val gradient = Brush.linearGradient(0.3f to WHITE,1.0f to LIGHT_BLUE)
+        val bringIntoViewRequester =  remember { BringIntoViewRequester()}
         Column(
             modifier = Modifier
                 .background(gradient)
@@ -112,7 +116,11 @@ fun CalculatorImcScreen() {
             )
 
             OutlinedTextField(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .bringIntoViewRequester(
+                        bringIntoViewRequester = bringIntoViewRequester
+                    ),
                 value = height,
                 onValueChange = { height = it },
                 label = {
